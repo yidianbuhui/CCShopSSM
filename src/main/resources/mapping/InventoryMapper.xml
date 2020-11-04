@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xtd.dao.InventoryMapper">
-    <resultMap id="BaseResultMap" type="com.xtd.entity.Inventory">
+<mapper namespace="com.yidianbuhui.ccshop.dao.InventoryMapper">
+    <resultMap id="BaseResultMap" type="com.yidianbuhui.ccshop.entity.Inventory">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="quantity" jdbcType="VARCHAR" property="quantity"/>
     </resultMap>
@@ -18,11 +18,11 @@
     delete from inventory
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xtd.entity.Inventory">
+    <insert id="insert" parameterType="com.yidianbuhui.ccshop.entity.Inventory">
     insert into inventory (id, quantity)
     values (#{id,jdbcType=INTEGER}, #{quantity,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="com.xtd.entity.Inventory">
+    <insert id="insertSelective" parameterType="com.yidianbuhui.ccshop.entity.Inventory">
         insert into inventory
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -41,7 +41,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xtd.entity.Inventory">
+    <update id="updateByPrimaryKeySelective" parameterType="com.yidianbuhui.ccshop.entity.Inventory">
         update inventory
         <set>
             <if test="quantity != null">
@@ -50,7 +50,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xtd.entity.Inventory">
+    <update id="updateByPrimaryKey" parameterType="com.yidianbuhui.ccshop.entity.Inventory">
     update inventory
     set quantity = #{quantity,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

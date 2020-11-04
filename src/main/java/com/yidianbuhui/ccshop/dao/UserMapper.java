@@ -1,17 +1,18 @@
 package com.yidianbuhui.ccshop.dao;
 
 import com.yidianbuhui.ccshop.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+import java.util.Map;
+
+@Mapper
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer id);
+    User selectByUser(User user);
 
-    int insert(User record);
+    User getUser(Integer id);
 
-    int insertSelective(User record);
+    int addUser(User user);
 
-    User selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+    int updateUser(User user);
 }

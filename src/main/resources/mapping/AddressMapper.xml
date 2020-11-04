@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xtd.dao.AddressMapper">
-    <resultMap id="BaseResultMap" type="com.xtd.entity.Address">
+<mapper namespace="com.yidianbuhui.ccshop.dao.AddressMapper">
+    <resultMap id="BaseResultMap" type="com.yidianbuhui.ccshop.entity.Address">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="userid" jdbcType="VARCHAR" property="userid"/>
         <result column="address" jdbcType="VARCHAR" property="address"/>
@@ -19,13 +19,13 @@
     delete from address
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xtd.entity.Address">
+    <insert id="insert" parameterType="com.yidianbuhui.ccshop.entity.Address">
     insert into address (id, userid, address
       )
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.xtd.entity.Address">
+    <insert id="insertSelective" parameterType="com.yidianbuhui.ccshop.entity.Address">
         insert into address
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -50,7 +50,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xtd.entity.Address">
+    <update id="updateByPrimaryKeySelective" parameterType="com.yidianbuhui.ccshop.entity.Address">
         update address
         <set>
             <if test="userid != null">
@@ -62,7 +62,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xtd.entity.Address">
+    <update id="updateByPrimaryKey" parameterType="com.yidianbuhui.ccshop.entity.Address">
     update address
     set userid = #{userid,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR}

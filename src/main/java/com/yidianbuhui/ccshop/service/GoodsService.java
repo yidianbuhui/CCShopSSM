@@ -1,13 +1,11 @@
-package com.yidianbuhui.ccshop.dao;
+package com.yidianbuhui.ccshop.service;
 
 import com.yidianbuhui.ccshop.entity.Goods;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
-@Mapper
-public interface GoodsMapper {
+public interface GoodsService {
     List<Goods> getGoodsList(Map<String, Object> goodsMap);
 
     int getCount(Map<String, Object> goodsMap);
@@ -15,4 +13,5 @@ public interface GoodsMapper {
     Goods getGoods(Integer id);
 
     List<Goods> getGoodsByType(Integer typeId);
+
 }

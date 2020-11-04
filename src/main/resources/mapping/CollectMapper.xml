@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xtd.dao.CollectMapper">
-    <resultMap id="BaseResultMap" type="com.xtd.entity.Collect">
+<mapper namespace="com.yidianbuhui.ccshop.dao.CollectMapper">
+    <resultMap id="BaseResultMap" type="com.yidianbuhui.ccshop.entity.Collect">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="userid" jdbcType="VARCHAR" property="userid"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
@@ -19,13 +19,13 @@
     delete from collect
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xtd.entity.Collect">
+    <insert id="insert" parameterType="com.yidianbuhui.ccshop.entity.Collect">
     insert into collect (id, userid, goods_id
       )
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.xtd.entity.Collect">
+    <insert id="insertSelective" parameterType="com.yidianbuhui.ccshop.entity.Collect">
         insert into collect
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -50,7 +50,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xtd.entity.Collect">
+    <update id="updateByPrimaryKeySelective" parameterType="com.yidianbuhui.ccshop.entity.Collect">
         update collect
         <set>
             <if test="userid != null">
@@ -62,7 +62,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xtd.entity.Collect">
+    <update id="updateByPrimaryKey" parameterType="com.yidianbuhui.ccshop.entity.Collect">
     update collect
     set userid = #{userid,jdbcType=VARCHAR},
       goods_id = #{goodsId,jdbcType=INTEGER}

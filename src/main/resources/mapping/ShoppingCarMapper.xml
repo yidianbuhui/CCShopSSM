@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xtd.dao.ShoppingCarMapper">
-    <resultMap id="BaseResultMap" type="com.xtd.entity.ShoppingCar">
+<mapper namespace="com.yidianbuhui.ccshop.dao.ShoppingCarMapper">
+    <resultMap id="BaseResultMap" type="com.yidianbuhui.ccshop.entity.ShoppingCar">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
         <result column="num" jdbcType="INTEGER" property="num"/>
@@ -21,13 +21,13 @@
     delete from shopping_car
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.xtd.entity.ShoppingCar">
+    <insert id="insert" parameterType="com.yidianbuhui.ccshop.entity.ShoppingCar">
     insert into shopping_car (id, goods_id, num, 
       userid, create_date)
     values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
       #{userid,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.xtd.entity.ShoppingCar">
+    <insert id="insertSelective" parameterType="com.yidianbuhui.ccshop.entity.ShoppingCar">
         insert into shopping_car
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -64,7 +64,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.xtd.entity.ShoppingCar">
+    <update id="updateByPrimaryKeySelective" parameterType="com.yidianbuhui.ccshop.entity.ShoppingCar">
         update shopping_car
         <set>
             <if test="goodsId != null">
@@ -82,7 +82,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.xtd.entity.ShoppingCar">
+    <update id="updateByPrimaryKey" parameterType="com.yidianbuhui.ccshop.entity.ShoppingCar">
     update shopping_car
     set goods_id = #{goodsId,jdbcType=INTEGER},
       num = #{num,jdbcType=INTEGER},
