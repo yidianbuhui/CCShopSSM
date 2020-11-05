@@ -13,7 +13,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
         //跨域
         registry.addInterceptor(new HttpInterceptor()).addPathPatterns("/**");
         //token
-        registry.addInterceptor(new HeaderTokenInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html","/","/upload/**","/portal/**");
+       // registry.addInterceptor(new HeaderTokenInterceptor()).addPathPatterns("/**")
+      //          .excludePathPatterns("/index.html","/","/upload/**","/portal/**");
     }
 }

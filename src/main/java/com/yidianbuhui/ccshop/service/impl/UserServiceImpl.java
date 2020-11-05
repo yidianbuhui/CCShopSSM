@@ -3,6 +3,7 @@ package com.yidianbuhui.ccshop.service.impl;
 import com.yidianbuhui.ccshop.dao.UserMapper;
 import com.yidianbuhui.ccshop.entity.User;
 import com.yidianbuhui.ccshop.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,7 +11,7 @@ import javax.annotation.Resource;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Resource
+    @Autowired
     private UserMapper userMapper;
 
     @Override
